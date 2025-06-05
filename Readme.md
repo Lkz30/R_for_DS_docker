@@ -8,21 +8,24 @@ r_docker_project/
 ├── Dockerfile # Defines the Docker environment
 ├── install_packages.R # Installs necessary R packages
 ├── myscript.R # Your main analysis script
-´´´
+```
 
 ## 🚀 Getting Started
 
 ### 1. Build the Docker image
 
 ```
+
 docker build -t rfords_docker .
-´´´
+```
 
 ### 2. Run the container and execute your script
 
 ```
+
 docker run -it -v "$(pwd)":/app -w /app rfords_docker
-´´´
+```
+
 This mounts your local folder into the container and executes r_script.R. 
 
 🧠 What’s Inside?
@@ -33,13 +36,14 @@ This script installs all required R packages inside the container:
 ```
 packages <- c("tidyverse", "data.table", "caret", "lubridate", "shiny", "readr", "readxl")
 install.packages(packages, repos = "https://cloud.r-project.org")
-´´´
+```
 
 r_myscript.R
 
 After installation you'll see this message : 
-```print ("R is working now... ready for analysis")
-´´´
+```
+print ("R is working now... ready for analysis")
+```
 
 🌍 Why This Project?
 
